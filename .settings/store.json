@@ -1,0 +1,144 @@
+{
+  "gitlabAutoSync": "disabled",
+  "templateList": [
+    {
+      "content": "整理成一篇详细完整的笔记。\n满足以下格式要求：\n- 如果是代码，必须完整保留，不要随意生成。\n- 文字复制的内容尽量不要修改，只处理格式化后的内容。",
+      "id": "0",
+      "range": "all",
+      "status": true,
+      "title": "笔记"
+    },
+    {
+      "content": "最近一周的记录整理成一篇周报，将每条记录形成一句总结，每条不超过50字。",
+      "id": "1",
+      "range": "week",
+      "status": true,
+      "title": "周报"
+    },
+    {
+      "content": "根据用户提供的PPT OCR文本文件，扮演一位严谨且全面的笔记总结专家。你的核心任务是将用户提供的TXT文档内容，转化为格式优美、内容详尽、且经过额外知识补充的Markdown格式笔记。\n\n\n\n目的和目标：\n\n\n\n* 将用户提供的PPT OCR文本（TXT文档）准确无误地转化为条理清晰的Markdown笔记。\n\n* 确保笔记涵盖原文件中所有的知识点，做到详细到每一个细节或关键词。\n\n* 能够进行联网搜索，找到与原知识点相关的额外信息，并将其整合到笔记中，使内容更具深度和广度。\n\n* 使用标准的Markdown语法进行排版，包括标题、列表、代码块、引用等，使其易于阅读。\n\n* 对于数学公式，必须采用标准的Markdown可识别的LaTeX格式，如'$i^2$'。\n\n\n\n行为和规则：\n\n\n\n1. 初始响应：\n\na) 确认接收到用户的PPT OCR文本，并告知用户你将开始进行总结和补充。\n\nb) 询问用户是否有任何特定的排版偏好或需要特别注意的知识点。\n\n\n\n2. 内容处理和总结：\n\na) 仔细阅读用户提供的OCR文本，识别并提取所有核心知识点和细节。\n\nb) 在总结过程中，保持对原始文本的忠实，确保不遗漏任何信息。\n\nc) 在每个知识点下方，或以适当的方式，整合通过联网搜索获得的补充知识。补充内容应以清晰的方式与原始PPT内容区分开来，例如使用不同的标题级别或引用块。\n\n\n\n3. 格式化和排版：\n\na) 使用Markdown的标题（#，##，###等）来组织笔记的结构，使之逻辑清晰。\n\nb) 使用无序列表（* 或 -）或有序列表（1.，2.等）来罗列知识点和细节。\n\nc) 对于关键概念或术语，可以使用粗体（**）或斜体（*）。\n\nd) 确保所有数学公式都以LaTeX格式正确嵌入。\n\ne) 最终生成的文档应具有专业且易于阅读的排版。\n\n\n\n4. 互动和反馈：\n\na) 在提交最终笔记前，可以简要说明你如何进行了补充，以及补充了哪些方面的内容。\n\nb) 鼓励用户检查笔记，并提出修改或进一步补充的要求。\n\n\n\n整体语调：\n\n* 使用严谨、专业和有条理的语言。\n\n* 展现出对知识的深度和细致入微的关注。\n\n* 表现得像一位知识渊博、值得信赖的助手。",
+      "id": "3",
+      "range": "all",
+      "status": true,
+      "title": "PPT->markdown"
+    }
+  ],
+  "aiModelList": [
+    {
+      "apiKey": "sk-1eaNsBvrfrF4hpwdo6AiQlFzcEtZK7GUpBlOcg03Dm3xunbQ",
+      "baseURL": "http://api.notegen.top/v1",
+      "key": "note-gen-chat",
+      "model": "Qwen/Qwen3-8B",
+      "modelType": "chat",
+      "temperature": 0.7,
+      "title": "NoteGen Chat",
+      "topP": 1
+    },
+    {
+      "apiKey": "sk-1eaNsBvrfrF4hpwdo6AiQlFzcEtZK7GUpBlOcg03Dm3xunbQ",
+      "baseURL": "http://api.notegen.top/v1",
+      "key": "note-gen-embedding",
+      "model": "BAAI/bge-m3",
+      "modelType": "embedding",
+      "temperature": 0.7,
+      "title": "NoteGen Embedding",
+      "topP": 1
+    },
+    {
+      "apiKey": "sk-1eaNsBvrfrF4hpwdo6AiQlFzcEtZK7GUpBlOcg03Dm3xunbQ",
+      "baseURL": "http://api.notegen.top/v1",
+      "key": "note-gen-vlm",
+      "model": "THUDM/GLM-4.1V-9B-Thinking",
+      "modelType": "chat",
+      "temperature": 0.7,
+      "title": "NoteGen VLM",
+      "topP": 1
+    },
+    {
+      "apiKey": "sk-3010749dc1ca4c5cb5d87f53ecd49699",
+      "apiKeyUrl": "https://platform.deepseek.com/api_keys",
+      "baseURL": "https://api.deepseek.com",
+      "icon": "https://s2.loli.net/2025/06/25/n39WmsCDbVLQzjr.png",
+      "key": "57660046-b3b0-4f72-8cc2-746b03366a8f",
+      "model": "deepseek-reasoner",
+      "modelType": "chat",
+      "title": "DeepSeek"
+    }
+  ],
+  "rerankingModel": "",
+  "embeddingModel": "note-gen-embedding",
+  "darkMode": "system",
+  "jsdelivr": true,
+  "promptList": [
+    {
+      "content": "请你扮演一个笔记软件的智能助手，可以参考记录内容，使用 markdown 语法，回答用户的问题。",
+      "id": "0",
+      "isDefault": true,
+      "title": "写作助手"
+    },
+    {
+      "content": "作为笔记软件的智能助手，您将扮演一位严谨且全面的笔记总结专家。核心任务是根据用户提供的PPT OCR文本文件（TXT格式），将其转化为格式优美、内容详尽、并经过知识补充的Markdown笔记。\n\n**目的与目标：**\n- 准确无误地将OCR文本转化为条理清晰的Markdown笔记。\n- 确保笔记覆盖原始文件中的所有知识点，包括每一个细节和关键词。\n- 通过联网搜索获取与原始知识点相关的额外信息，并整合到笔记中，以增强内容的深度和广度。\n- 使用标准Markdown语法进行排版，包括标题、列表、代码块、引用等元素，提升可读性。\n- 对于数学公式，必须采用Markdown可识别的LaTeX格式，例如 `$i^2$`。\n\n**行为与规则：**\n1. **初始响应：**\n   - 确认接收到用户的PPT OCR文本，并告知开始进行总结和补充。\n   - 询问用户是否有特定的排版偏好或需要特别注意的知识点。\n\n2. **内容处理与总结：**\n   - 仔细阅读OCR文本，识别并提取所有核心知识点和细节。\n   - 保持对原始文本的忠实，确保不遗漏任何信息。\n   - 在每个知识点下方或以适当方式整合补充知识，使用清晰区分方式（如引用块或不同标题级别）标明补充内容。\n\n3. **格式化与排版：**\n   - 使用Markdown标题（#、##、###等）组织笔记结构，确保逻辑清晰。\n   - 使用无序列表（* 或 -）或有序列表（1.、2.等）罗列知识点和细节。\n   - 对关键概念或术语使用粗体（**）或斜体（*）突出。\n   - 确保所有数学公式以LaTeX格式正确嵌入。\n   - 最终生成专业且易于阅读的排版文档。\n\n4. **互动与反馈：**\n   - 在提交最终笔记前，简要说明补充的内容和方式。\n   - 鼓励用户检查笔记，并提出修改或进一步补充的要求。\n\n**整体语调：** 使用严谨、专业和有条理的语言，展现对知识的深度关注和细致处理，表现得知识渊博、值得信赖。",
+      "id": "1757671059492",
+      "title": "PPT->markdown"
+    }
+  ],
+  "currentAi": "57660046-b3b0-4f72-8cc2-746b03366a8f",
+  "codeTheme": "github",
+  "currentPromptId": "1757671059492",
+  "tesseractList": "eng,chi_sim",
+  "githubImageUsername": "liurunze35960",
+  "autoUpdate": true,
+  "audioModel": "",
+  "enableLineNumber": true,
+  "enableOutline": true,
+  "primaryImageMethod": "ocr",
+  "workspacePath": "",
+  "translateModel": "note-gen-chat",
+  "githubUsername": "liurunze35960",
+  "pageView": "immersiveView",
+  "shortcuts": [
+    {
+      "key": "openWindow",
+      "value": "CommandOrControl+Shift+W"
+    },
+    {
+      "key": "quickRecordText",
+      "value": "CommandOrControl+Shift+T"
+    }
+  ],
+  "chatLanguage": "中文",
+  "currentTagId": 1,
+  "gitlabUsername": "",
+  "typewriterMode": true,
+  "imageMethodModel": "note-gen-vlm",
+  "isRagEnabled": false,
+  "primaryBackupMethod": "github",
+  "workspaceHistory": [],
+  "gitlabInstanceType": "gitlab.com",
+  "version": "0.21.0",
+  "lastSettingPage": "sync",
+  "githubImageAccessToken": "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",
+  "uiScale": 125,
+  "collapsibleList": [
+    "生物化学"
+  ],
+  "markDescModel": "note-gen-chat",
+  "activeFilePath": "生物化学/糖类与糖生物学全面笔记.md",
+  "useImageRepo": true,
+  "isVectorDbEnabled": true,
+  "currentPage": "/core/article",
+  "gitlabAccessToken": "",
+  "previewTheme": "github",
+  "primaryModel": "note-gen-chat",
+  "lastVectorProcessTime": 1757668954694,
+  "giteeAutoSync": "disabled",
+  "accessToken": "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",
+  "outlinePosition": "right",
+  "gitlabCustomUrl": "",
+  "placeholderModel": "note-gen-chat",
+  "language": "简体中文",
+  "note_locale": "中文",
+  "autoSync": "60",
+  "giteeAccessToken": "",
+  "assetsPath": "assets"
+}
